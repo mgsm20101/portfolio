@@ -1,0 +1,321 @@
+{
+  "theme": {
+    "colors": {
+      "primary": "#6366f1",
+      "secondary": "#8b5cf6",
+      "accent": "#ec4899",
+      "background": "#0f172a",
+      "surface": "#1e293b",
+      "text": "#f1f5f9",
+      "textSecondary": "#94a3b8"
+    },
+    "fonts": {
+      "heading": "'Inter', sans-serif",
+      "body": "'Inter', sans-serif"
+    }
+  },
+  "hero": {
+    "name": "Mohamed Gamal Sedeek",
+    "title": "Software & Data Engineer",
+    "subtitle": "Building enterprise-grade systems with .NET, data engineering, and cloud technologies",
+    "description": "Results-oriented engineer with 10+ years of proven success in .NET development, data engineering, and cloud-based enterprise systems. Expert in software architecture, API design, and ETL pipelines.",
+    "image": "assets-image\\profile.jpg",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Get In Touch"
+    },
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/mohamgamal",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/mohamgamal",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Kaggle",
+        "url": "https://kaggle.com/mohamgamal",
+        "icon": "twitter"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Results-oriented Software and Data Engineer with over 10 years of proven success in .NET development, data engineering, and cloud-based enterprise systems.",
+    "paragraphs": [
+      "Expert in software architecture, API design, and ETL pipelines using C#, SQL Server, SSIS, Kafka, and .NET Core. Adept at delivering scalable, high-performance solutions integrating legacy and modern systems across enterprise, judicial, and governmental sectors.",
+      "Demonstrates strong proficiency in database design, data warehousing, and real-time streaming architectures using Kafka, Debezium, and PostgreSQL. Skilled in containerization and DevOps practices with Docker, Kubernetes, and Helm.",
+      "Recognized for technical leadership, Agile collaboration, and ability to drive continuous improvement in complex software ecosystems. Committed to innovation, maintainability, and data-driven performance optimization to achieve measurable business outcomes."
+    ],
+    "stats": [
+      {
+        "label": "Years Experience",
+        "value": "10+"
+      },
+      {
+        "label": "Projects Completed",
+        "value": "20+"
+      },
+      {
+        "label": "Systems Integrated",
+        "value": "15+"
+      },
+      {
+        "label": "Performance Boost",
+        "value": "300%"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "categories": [
+      {
+        "name": ".NET & Backend",
+        "skills": [
+          {
+            "name": "C# & .NET Core",
+            "level": 95,
+            "icon": "⚙️"
+          },
+          {
+            "name": "ASP.NET MVC",
+            "level": 93,
+            "icon": "🌐"
+          },
+          {
+            "name": "Entity Framework",
+            "level": 90,
+            "icon": "📊"
+          },
+          {
+            "name": "Web APIs",
+            "level": 92,
+            "icon": "🔌"
+          }
+        ]
+      },
+      {
+        "name": "Data Engineering",
+        "skills": [
+          {
+            "name": "SQL Server",
+            "level": 95,
+            "icon": "�️"
+          },
+          {
+            "name": "SSIS/SSRS/SSAS",
+            "level": 90,
+            "icon": "�"
+          },
+          {
+            "name": "PostgreSQL",
+            "level": 85,
+            "icon": "🐘"
+          },
+          {
+            "name": "Kafka & ETL",
+            "level": 88,
+            "icon": "🔄"
+          }
+        ]
+      },
+      {
+        "name": "DevOps & Cloud",
+        "skills": [
+          {
+            "name": "Docker",
+            "level": 87,
+            "icon": "🐳"
+          },
+          {
+            "name": "Kubernetes",
+            "level": 85,
+            "icon": "☸️"
+          },
+          {
+            "name": "CI/CD",
+            "level": 83,
+            "icon": "�"
+          },
+          {
+            "name": "Monitoring",
+            "level": 80,
+            "icon": "�"
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "items": [
+      {
+        "title": "Integration Service (Courts ↔ G2G)",
+        "description": "Designed SOA architecture with WCF and SQL Server 2012 for real-time synchronization between heterogeneous court systems. Unified data formats with secure communication and encryption for rapid data retrieval.",
+        "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
+        "tags": [".NET", "WCF", "SQL Server", "SOA"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": true
+      },
+      {
+        "title": "Complaints Management System (MOJ)",
+        "description": "Built centralized web application using ASP.NET Core for complaint handling with automated workflows and notifications. Reduced manual processing by 45% with role-based access and real-time analytics.",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+        "tags": ["ASP.NET Core", "TFS", "SQL Server", "Automation"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": true
+      },
+      {
+        "title": "Data Warehouse & ETL System",
+        "description": "Designed SSIS-based ETL pipelines aggregating data from multiple sources into SQL Server data warehouse. Enabled Power BI and OBIEE dashboards reducing manual reporting by 50%.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        "tags": ["SSIS", "ETL", "Power BI", "Data Warehouse"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": true
+      },
+      {
+        "title": "SPARROW-INN Hotel Management",
+        "description": "Developed multi-tenant SaaS solution using ASP.NET MVC and SQL Server 2016 with dynamic pricing, reservation, and billing modules. Deployed in cloud with automated scaling and 24/7 availability.",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
+        "tags": ["ASP.NET MVC", "SQL Server", "SaaS", "Cloud"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": false
+      },
+      {
+        "title": "Judicial Portal & Statistics System",
+        "description": "Created ASP.NET dashboards consolidating judicial statistics nationwide. Automated data collection reducing manual effort by over 50% with high availability and failover support.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+        "tags": ["ASP.NET", "Dashboards", "SQL Server", "Analytics"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": false
+      },
+      {
+        "title": "Real-time CDC Pipeline (Kafka + Debezium)",
+        "description": "Built distributed CDC pipeline from PostgreSQL to MongoDB using Debezium and Kafka, processing 10K records/min with Python consumers. Implemented event-driven microservices handling 5K messages/sec.",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+        "tags": ["Kafka", "Debezium", "Python", "Microservices"],
+        "links": {
+          "github": "https://github.com/mohamgamal"
+        },
+        "featured": true
+      }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "company": "3i-Vision",
+        "position": "Senior .NET Developer",
+        "duration": "Feb 2025 - Present",
+        "location": "Egypt",
+        "description": "Working on integration between WPF desktop applications and web-based systems. Developing and maintaining backend solutions using .NET Core and .NET Framework 4.8.",
+        "achievements": [
+          "Designed and implemented Web APIs for secure data exchange",
+          "Optimized SQL Server performance for high-volume data processing",
+          "Enhanced system architecture and web-service integration"
+        ],
+        "technologies": [".NET Core", "WPF", "Web APIs", "SQL Server"]
+      },
+      {
+        "company": "JIC (Judicial Information Center)",
+        "position": "Senior .NET Developer & Data Engineer",
+        "duration": "2020 - 2025",
+        "location": "Ministry of Justice, Egypt",
+        "description": "Designed end-to-end enterprise systems from requirements to deployment. Built data pipelines and ETL workflows integrating court systems into centralized databases.",
+        "achievements": [
+          "Developed APIs and microservices for Ministry of Justice portal",
+          "Implemented real-time case-tracking and reporting functionality",
+          "Led Agile sprints and mentored junior engineers",
+          "Optimized SQL Server schemas improving performance by 300%"
+        ],
+        "technologies": ["ASP.NET Core", "SSIS", "SQL Server", "Kafka", "ETL"]
+      },
+      {
+        "company": "JIC (Judicial Information Center)",
+        "position": ".NET Developer",
+        "duration": "2013 - 2020",
+        "location": "Ministry of Justice, Egypt",
+        "description": "Gathered requirements and delivered maintainable .NET applications. Designed relational database structures and enhanced data performance.",
+        "achievements": [
+          "Built multiple enterprise applications for judicial operations",
+          "Conducted code reviews, debugging, and unit testing",
+          "Provided post-implementation support and comprehensive documentation",
+          "Improved database performance through optimization techniques"
+        ],
+        "technologies": ["ASP.NET", "SQL Server", "WCF", "JavaScript"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+    "email": "Mohamed.gamal.sedeek@hotmail.com",
+    "phone": "+201028822031",
+    "location": "Badrashin, Giza, Egypt",
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/mohamgamal",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/mohamgamal",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Kaggle",
+        "url": "https://kaggle.com/mohamgamal",
+        "icon": "twitter"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:Mohamed.gamal.sedeek@hotmail.com",
+        "icon": "email"
+      }
+    ],
+    "form": {
+      "enabled": true,
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    }
+  }
+}
