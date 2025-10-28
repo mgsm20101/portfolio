@@ -83,6 +83,14 @@ const Hero = ({ data }) => {
             >
               {data.cta.secondary}
             </a>
+            <a
+              href="/portfolio/Mohamed Gamal Sedeek.pdf"
+              download
+              className="px-8 py-4 bg-accent rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 text-center flex items-center justify-center gap-2"
+            >
+              <span>📄</span>
+              Download CV
+            </a>
           </motion.div>
 
           {/* Social Links */}

@@ -5,6 +5,7 @@ A fully responsive, JSON-driven portfolio website built with React, TailwindCSS,
 ## ✨ Features
 
 - **JSON-Driven Content**: All portfolio data (Hero, About, Skills, Projects, Experience, Contact) stored in `src/data/portfolio.json`
+- **CV Download**: Downloadable resume/CV with one click
 - **Theme Customization**: Colors and fonts configurable via JSON
 - **Fully Responsive**: Mobile-first design that adapts to all screen sizes
 - **Smooth Animations**: Framer Motion animations throughout
@@ -12,6 +13,7 @@ A fully responsive, JSON-driven portfolio website built with React, TailwindCSS,
 - **Contact Form**: Built-in contact form with validation
 - **Scroll Effects**: Sticky navigation, scroll-to-top button, and scroll-triggered animations
 - **Hot Reload**: Changes to JSON automatically update the app in development
+- **GitHub Pages Ready**: Configured for easy deployment
 
 ## 🚀 Quick Start
 
@@ -157,11 +159,37 @@ All components are optimized for these breakpoints using TailwindCSS utilities.
 3. **Content**: Keep descriptions concise and impactful
 4. **Icons**: Emoji icons are used by default, but you can integrate icon libraries
 5. **SEO**: Update `index.html` meta tags for better SEO
+6. **CV/Resume**: Place your PDF resume in `public/` folder (see CV_SETUP.md for details)
+
+## 📄 Adding Your CV
+
+1. Place your CV PDF in the `public/` folder
+2. Name it `Mohamed Gamal Sedeek.pdf` or update the path in `src/components/Hero.jsx`
+3. The download button is automatically added to the Hero section
+4. See `CV_SETUP.md` for detailed instructions
+
+## 🚀 Deployment
+
+### Quick Deploy to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+For detailed deployment instructions, see:
+- `DEPLOY.md` - Complete deployment guide
+- `SUCCESS.md` - Post-deployment checklist
+- `TROUBLESHOOT.md` - Common issues and solutions
 
 ## 🌟 Features in Detail
 
 ### Auto-Update from JSON
 The app watches `portfolio.json` and automatically updates when you save changes during development.
+
+### CV Download
+- One-click download button in Hero section
+- PDF format for universal compatibility
+- Styled with accent color for visibility
 
 ### Smooth Animations
 - Scroll-triggered animations using Framer Motion

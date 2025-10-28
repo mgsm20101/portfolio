@@ -33,12 +33,12 @@ To use local images in your portfolio:
 ```json
 {
   "hero": {
-    "image": "/assets-image/profile.jpg"
+    "image": "/portfolio/assets-image/profile.jpg"
   },
   "projects": {
     "items": [
       {
-        "image": "/assets-image/project-1.jpg"
+        "image": "/portfolio/assets-image/project-1.jpg"
       }
     ]
   }

@@ -1,12 +1,12 @@
 # GitHub Pages Deployment Guide
 
-## 🚀 طريقتان للنشر على GitHub Pages
+## 🚀 Two Methods to Deploy on GitHub Pages
 
-### الطريقة الأولى: النشر التلقائي (موصى به)
+### Method 1: Automatic Deployment (Recommended)
 
-#### الخطوات:
+#### Steps:
 
-1. **ارفع الكود على GitHub:**
+1. **Upload code to GitHub:**
 ```bash
 git init
 git add .
@@ -16,103 +16,103 @@ git remote add origin https://github.com/mgsm20101/portfolio.git
 git push -u origin main
 ```
 
-2. **تفعيل GitHub Pages:**
-   - اذهب إلى repository settings
-   - اختر "Pages" من القائمة الجانبية
-   - في "Build and deployment" اختر:
+2. **Enable GitHub Pages:**
+   - Go to repository settings
+   - Select "Pages" from sidebar
+   - Under "Build and deployment" choose:
      - **Source**: GitHub Actions
-   - احفظ التغييرات
+   - Save changes
 
-3. **سيتم النشر تلقائياً!**
-   - عند كل push للـ main branch
-   - يمكنك متابعة العملية في تبويب "Actions"
-   - الموقع سيكون متاح على: `https://mgsm20101.github.io/portfolio/`
+3. **Auto-deployment activated!**
+   - Triggers on every push to main branch
+   - Monitor progress in "Actions" tab
+   - Website will be available at: `https://mgsm20101.github.io/portfolio/`
 
 ---
 
-### الطريقة الثانية: النشر اليدوي
+### Method 2: Manual Deployment
 
-#### الخطوات:
+#### Steps:
 
-1. **بناء المشروع:**
+1. **Build the project:**
 ```bash
 npm run build
 ```
 
-2. **النشر باستخدام gh-pages:**
+2. **Deploy using gh-pages:**
 ```bash
 npm run deploy
 ```
 
-3. **تفعيل GitHub Pages (مرة واحدة فقط):**
-   - اذهب إلى repository settings
-   - اختر "Pages" من القائمة الجانبية
-   - في "Build and deployment" اختر:
+3. **Enable GitHub Pages (one-time setup):**
+   - Go to repository settings
+   - Select "Pages" from sidebar
+   - Under "Build and deployment" choose:
      - **Source**: Deploy from a branch
      - **Branch**: gh-pages / (root)
-   - احفظ التغييرات
+   - Save changes
 
-4. **الموقع سيكون متاح على:**
+4. **Website will be available at:**
    ```
    https://mgsm20101.github.io/portfolio/
    ```
 
 ---
 
-## 📝 الملفات التي تم تعديلها:
+## 📝 Modified Files:
 
 ### 1. `package.json`
-- ✅ إضافة `homepage` URL
-- ✅ إضافة سكريبتات `predeploy` و `deploy`
+- ✅ Added `homepage` URL
+- ✅ Added `predeploy` and `deploy` scripts
 
 ### 2. `vite.config.js`
-- ✅ إضافة `base: '/portfolio/'` للمسارات الصحيحة
+- ✅ Added `base: '/portfolio/'` for correct paths
 
 ### 3. `.github/workflows/deploy.yml`
-- ✅ ملف GitHub Actions للنشر التلقائي
+- ✅ GitHub Actions file for automatic deployment
 
 ---
 
-## 🔧 الأوامر المتاحة:
+## 🔧 Available Commands:
 
 ```bash
-# تشغيل في وضع التطوير
+# Run in development mode
 npm run dev
 
-# بناء المشروع
+# Build project
 npm run build
 
-# معاينة البناء محلياً
+# Preview build locally
 npm run preview
 
-# نشر على GitHub Pages (يدوياً)
+# Deploy to GitHub Pages (manual)
 npm run deploy
 ```
 
 ---
 
-## ⚠️ ملاحظات مهمة:
+## ⚠️ Important Notes:
 
-1. **تأكد من اسم الـ repository:**
-   - الاسم الحالي: `portfolio`
-   - إذا كان مختلفاً، عدّل في:
+1. **Verify repository name:**
+   - Current name: `portfolio`
+   - If different, update in:
      - `package.json` → `homepage`
      - `vite.config.js` → `base`
 
-2. **الصور المحلية:**
-   - ضع الصور في `public/assets-image/`
-   - استخدم المسارات: `/portfolio/assets-image/image.jpg`
+2. **Local images:**
+   - Place images in `public/assets-image/`
+   - Use paths: `/portfolio/assets-image/image.jpg`
 
-3. **التحديثات:**
-   - **طريقة تلقائية**: فقط اعمل push للـ main branch
-   - **طريقة يدوية**: استخدم `npm run deploy`
+3. **Updates:**
+   - **Automatic method**: Just push to main branch
+   - **Manual method**: Use `npm run deploy`
 
 ---
 
-## 🎯 الخطوات السريعة:
+## 🎯 Quick Steps:
 
 ```bash
-# 1. ارفع الكود
+# 1. Upload code
 git init
 git add .
 git commit -m "Deploy portfolio"
@@ -120,27 +120,27 @@ git branch -M main
 git remote add origin https://github.com/mgsm20101/portfolio.git
 git push -u origin main
 
-# 2. فعّل GitHub Pages من Settings
-# 3. انتظر دقائق قليلة
-# 4. افتح: https://mgsm20101.github.io/portfolio/
+# 2. Enable GitHub Pages from Settings
+# 3. Wait a few minutes
+# 4. Open: https://mgsm20101.github.io/portfolio/
 ```
 
 ---
 
-## 📞 استكشاف الأخطاء:
+## 📞 Troubleshooting:
 
-### المشكلة: الموقع لا يعمل
-- ✅ تحقق من تفعيل GitHub Pages في Settings
-- ✅ انتظر 2-3 دقائق بعد أول push
-- ✅ تأكد من أن الـ branch الصحيح محدد
+### Issue: Website doesn't work
+- ✅ Check GitHub Pages is enabled in Settings
+- ✅ Wait 2-3 minutes after first push
+- ✅ Verify correct branch is selected
 
-### المشكلة: الصور لا تظهر
-- ✅ تأكد من المسارات تبدأ بـ `/portfolio/`
-- ✅ ضع الصور في مجلد `public/`
+### Issue: Images don't appear
+- ✅ Ensure paths start with `/portfolio/`
+- ✅ Place images in `public/` folder
 
-### المشكلة: CSS لا يعمل
-- ✅ تأكد من `base: '/portfolio/'` في vite.config.js
+### Issue: CSS doesn't work
+- ✅ Verify `base: '/portfolio/'` in vite.config.js
 
 ---
 
-**تم الإعداد بنجاح! 🎉**
+**Setup Complete! 🎉**
