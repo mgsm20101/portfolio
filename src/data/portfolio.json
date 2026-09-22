@@ -16,10 +16,10 @@
   },
   "hero": {
     "name": "Mohamed Gamal Sedeek",
-    "title": "Software & Data Engineer",
-    "subtitle": "Building enterprise-grade systems with .NET, data engineering, and cloud technologies",
-    "description": "Results-oriented engineer with 10+ years of proven success in .NET development, data engineering, and cloud-based enterprise systems. Expert in software architecture, API design, and ETL pipelines.",
-    "image": "assets-image\\profile.jpg",
+    "title": "AI Engineer | Applied LLM Systems",
+    "subtitle": "Senior .NET engineer building measured RAG and LLM systems — and the evaluation harnesses that decide whether they work.",
+    "description": "10+ years shipping enterprise .NET and data platforms, now building applied LLM systems the same way: eval set before retriever, confidence intervals on every number, and a registry that names the command and the commit behind each one.",
+    "image": "assets-image/profile.jpg",
     "cta": {
       "primary": "View My Work",
       "secondary": "Get In Touch"
@@ -37,180 +37,339 @@
       },
       {
         "name": "Kaggle",
-        "url": "https://kaggle.com/mohamgamal",
-        "icon": "twitter"
+        "url": "https://www.kaggle.com/mohammg",
+        "icon": "kaggle"
       }
-    ]
+    ],
+    "resume": "Mohamed-Gamal-Sedeek-AI-Engineer.pdf"
   },
   "about": {
     "title": "About Me",
-    "description": "Results-oriented Software and Data Engineer with over 10 years of proven success in .NET development, data engineering, and cloud-based enterprise systems.",
+    "description": "Senior .NET engineer moving into applied AI: I integrate LLM systems into enterprise software, and I measure them before I claim anything about them.",
     "paragraphs": [
-      "Expert in software architecture, API design, and ETL pipelines using C#, SQL Server, SSIS, Kafka, and .NET Core. Adept at delivering scalable, high-performance solutions integrating legacy and modern systems across enterprise, judicial, and governmental sectors.",
-      "Demonstrates strong proficiency in database design, data warehousing, and real-time streaming architectures using Kafka, Debezium, and PostgreSQL. Skilled in containerization and DevOps practices with Docker, Kubernetes, and Helm.",
-      "Recognized for technical leadership, Agile collaboration, and ability to drive continuous improvement in complex software ecosystems. Committed to innovation, maintainability, and data-driven performance optimization to achieve measurable business outcomes."
+      "Ten years of production .NET across judicial and government systems — APIs, microservices, SSIS/ETL pipelines, SQL Server and PostgreSQL at scale, Kafka and Debezium for change data capture, Docker and Kubernetes to ship it. That is the half of AI engineering that is just engineering, and it is the half most demos skip.",
+      "The AI work is built the same way. My flagship is an Arabic legal RAG system where the question set, the reference checker and the scoreboard were written before the retriever existed. Four retrieval configurations are compared under bootstrap confidence intervals; generation is scored by a program that audits every citation against the articles the retriever actually returned, with no judge model in the loop.",
+      "It reports a negative result on purpose: adding a cross-encoder reranker cost 64x the latency and did not beat dense retrieval on this eval set. Knowing that — and knowing the eval set is too small to resolve the difference — is worth more than a demo that answers one question well."
     ],
     "stats": [
       {
-        "label": "Years Experience",
+        "label": "Years in production engineering",
         "value": "10+"
       },
       {
-        "label": "Projects Completed",
-        "value": "20+"
+        "label": "Retrieval configs benchmarked",
+        "value": "4"
       },
       {
-        "label": "Systems Integrated",
-        "value": "15+"
+        "label": "Tests in the flagship repo",
+        "value": "890"
       },
       {
-        "label": "Performance Boost",
-        "value": "300%"
+        "label": "Published numbers without a source",
+        "value": "0"
       }
     ]
   },
   "skills": {
     "title": "Skills & Technologies",
+    "subtitle": "Grouped by how the skill is held — shipped in production, or built and measured in project work. No self-assessed percentages: those are numbers with nothing behind them.",
     "categories": [
       {
-        "name": ".NET & Backend",
+        "name": "Applied AI / LLM",
+        "context": "Built and measured",
         "skills": [
           {
-            "name": "C# & .NET Core",
-            "level": 95,
-            "icon": "⚙️"
+            "name": "RAG architecture"
           },
           {
-            "name": "ASP.NET MVC",
-            "level": 93,
-            "icon": "🌐"
+            "name": "Retrieval evaluation"
           },
           {
-            "name": "Entity Framework",
-            "level": 90,
-            "icon": "📊"
+            "name": "Dense embeddings (e5)"
           },
           {
-            "name": "Web APIs",
-            "level": 92,
-            "icon": "🔌"
+            "name": "BM25 / hybrid RRF"
+          },
+          {
+            "name": "Cross-encoder reranking"
+          },
+          {
+            "name": "Citation grounding"
+          },
+          {
+            "name": "Abstention design"
+          },
+          {
+            "name": "Ollama / local LLM serving"
+          },
+          {
+            "name": "Schema-constrained output"
+          },
+          {
+            "name": "sentence-transformers"
+          },
+          {
+            "name": "PyTorch (inference)"
+          },
+          {
+            "name": "Prompt & contract design"
+          }
+        ]
+      },
+      {
+        "name": ".NET & Backend",
+        "context": "10+ years in production",
+        "skills": [
+          {
+            "name": "C# / .NET 8"
+          },
+          {
+            "name": "ASP.NET Core"
+          },
+          {
+            "name": "Web APIs"
+          },
+          {
+            "name": "Entity Framework Core"
+          },
+          {
+            "name": "Clean Architecture"
+          },
+          {
+            "name": "CQRS / MediatR"
+          },
+          {
+            "name": "WCF / legacy integration"
+          },
+          {
+            "name": "WPF"
           }
         ]
       },
       {
         "name": "Data Engineering",
+        "context": "10+ years in production",
         "skills": [
           {
-            "name": "SQL Server",
-            "level": 95,
-            "icon": "�️"
+            "name": "SQL Server"
           },
           {
-            "name": "SSIS/SSRS/SSAS",
-            "level": 90,
-            "icon": "�"
+            "name": "PostgreSQL"
           },
           {
-            "name": "PostgreSQL",
-            "level": 85,
-            "icon": "🐘"
+            "name": "SSIS / SSRS / SSAS"
           },
           {
-            "name": "Kafka & ETL",
-            "level": 88,
-            "icon": "🔄"
+            "name": "ETL & data warehousing"
+          },
+          {
+            "name": "Kafka"
+          },
+          {
+            "name": "Debezium CDC"
+          },
+          {
+            "name": "Query optimisation"
+          },
+          {
+            "name": "Python / pandas"
           }
         ]
       },
       {
-        "name": "DevOps & Cloud",
+        "name": "Platform & Delivery",
+        "context": "Production",
         "skills": [
           {
-            "name": "Docker",
-            "level": 87,
-            "icon": "🐳"
+            "name": "Docker"
           },
           {
-            "name": "Kubernetes",
-            "level": 85,
-            "icon": "☸️"
+            "name": "Kubernetes"
           },
           {
-            "name": "CI/CD",
-            "level": 83,
-            "icon": "�"
+            "name": "CI/CD"
           },
           {
-            "name": "Monitoring",
-            "level": 80,
-            "icon": "�"
+            "name": "FastAPI"
+          },
+          {
+            "name": "pytest"
+          },
+          {
+            "name": "Git"
+          },
+          {
+            "name": "Agile & mentoring"
           }
         ]
       }
     ]
   },
   "projects": {
-    "title": "Featured Projects",
+    "title": "Projects",
+    "subtitle": "The measured projects carry an “Evidence / Reproduce” button: it opens the command, the commit and the raw result file behind every number on the card. The rest is production work delivered in employment, which has no public repository and says so.",
     "items": [
       {
-        "title": "Integration Service (Courts ↔ G2G)",
-        "description": "Designed SOA architecture with WCF and SQL Server 2012 for real-time synchronization between heterogeneous court systems. Unified data formats with secure communication and encryption for rapid data retrieval.",
-        "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop",
-        "tags": [".NET", "WCF", "SQL Server", "SOA"],
+        "group": "flagship",
+        "title": "Arabic Legal RAG — measured retrieval and citation-forced generation",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "Arabic legal text breaks a RAG pipeline silently. The PDF stores text in visual order, so every word extracts reversed; Arabic-Indic digits sit inside the Arabic Unicode block, so a naive reversal turns article 25 into article 52 — a real article, wrong number, no error; and the normalisation that genuinely helps retrieval inflates the score if it is reused at evaluation time.",
+        "description": "Article-level corpus, a hand-written question set with machine-verified article references, and four retrieval configurations compared under bootstrap confidence intervals. Generation is citation-forced and audited by a program rather than a judge model: every citation is resolved against the corpus and against the exact articles the retriever returned.",
+        "metrics": [
+          {
+            "label": "Recall@5 — dense, against BM25's 0.333",
+            "value": "0.767"
+          },
+          {
+            "label": "Reranker latency cost, for no measurable gain",
+            "value": "64x"
+          },
+          {
+            "label": "Fabricated citations across 15 answers",
+            "value": "0"
+          }
+        ],
+        "limitation": "15 scored questions. Only dense > BM25 survives the confidence intervals — dense, hybrid and hybrid+rerank overlap, so this eval set cannot order them. The corpus also failed its fidelity check against the official gazette, so every number is performance on this corpus, not a statement about the law.",
+        "tags": [
+          "RAG",
+          "Arabic NLP",
+          "Evaluation",
+          "sentence-transformers",
+          "FastAPI",
+          "Ollama",
+          "pytest"
+        ],
         "links": {
-          "github": "https://github.com/mohamgamal"
+          "github": "https://github.com/mgsm20101/arabic-legal-rag",
+          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/main/EVIDENCE.md"
+        },
+        "evidence": {
+          "command": "python evals/ablation_result.py  |  python evals/retrieval_latency.py --reps 3 --warmup 3  |  python tasks.py answer-eval --model ollama:gemma3:4b",
+          "commit": "bd04e8e8 (quality) · d5cee7ff (latency) · 46797bef (generation)",
+          "environment": "Retrieval on CPU, 12 cores / 15.9 GB. Generation on gemma3:4b via Ollama, Q4_K_M, greedy, temperature 0.",
+          "dataset": "56 articles (Egypt Law 151/2020). 20 questions — 15 scored, 5 abstention, dev split, k=5.",
+          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/main/evals/registry",
+          "note": "Each harness refuses to describe a dirty worktree: it runs git status itself and stamps worktree_clean into its own output, so a result produced from an edited tree says so."
         },
         "featured": true
       },
       {
-        "title": "Complaints Management System (MOJ)",
-        "description": "Built centralized web application using ASP.NET Core for complaint handling with automated workflows and notifications. Reduced manual processing by 45% with role-based access and real-time analytics.",
-        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-        "tags": ["ASP.NET Core", "TFS", "SQL Server", "Automation"],
+        "group": "flagship",
+        "title": "Intent Router — fine-tuned encoder against a prompted LLM",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "Train a small classifier, or just prompt an LLM? The question usually gets answered by instinct. Here it was answered by running both over the same bilingual (Arabic/English) labelled set and measuring accuracy, latency and throughput.",
+        "description": "A fine-tuned multilingual DistilBERT against a self-hosted LLM with schema-constrained JSON output, behind a .NET 8 Minimal API that validates and forwards to the Python service through a typed HttpClient.",
+        "metrics": [
+          {
+            "label": "LLM accuracy, with no training at all",
+            "value": "93.8%"
+          },
+          {
+            "label": "Fine-tuned encoder accuracy",
+            "value": "71.9%"
+          },
+          {
+            "label": "Encoder latency advantage per request",
+            "value": "130x"
+          }
+        ],
+        "limitation": "32 held-out examples and no confidence intervals — one example is 3.1 points, so the accuracy gap is a direction, not a margin. The cost column in the repo is modelled from an assumed hourly host rate, never billed, and is labelled as such.",
+        "tags": [
+          "DistilBERT",
+          "Fine-tuning",
+          "LLM",
+          "Structured output",
+          ".NET 8",
+          "FastAPI"
+        ],
         "links": {
-          "github": "https://github.com/mohamgamal"
+          "github": "https://github.com/mgsm20101/intent-router"
+        },
+        "evidence": {
+          "command": "python -m src.eval.run_eval",
+          "environment": "Encoder on CPU; qwen2.5:7b-instruct through Ollama.",
+          "dataset": "32 bilingual held-out examples across 8 intents.",
+          "raw": "https://github.com/mgsm20101/intent-router/blob/main/docs/results.md",
+          "note": "The harness records no device metadata, so the README states that the split between CPU and GPU is not in the record rather than guessing at it."
         },
         "featured": true
       },
       {
-        "title": "Data Warehouse & ETL System",
-        "description": "Designed SSIS-based ETL pipelines aggregating data from multiple sources into SQL Server data warehouse. Enabled Power BI and OBIEE dashboards reducing manual reporting by 50%.",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        "tags": ["SSIS", "ETL", "Power BI", "Data Warehouse"],
-        "links": {
-          "github": "https://github.com/mohamgamal"
-        },
-        "featured": true
-      },
-      {
-        "title": "SPARROW-INN Hotel Management",
-        "description": "Developed multi-tenant SaaS solution using ASP.NET MVC and SQL Server 2016 with dynamic pricing, reservation, and billing modules. Deployed in cloud with automated scaling and 24/7 availability.",
-        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
-        "tags": ["ASP.NET MVC", "SQL Server", "SaaS", "Cloud"],
-        "links": {
-          "github": "https://github.com/mohamgamal"
-        },
-        "featured": false
-      },
-      {
-        "title": "Judicial Portal & Statistics System",
-        "description": "Created ASP.NET dashboards consolidating judicial statistics nationwide. Automated data collection reducing manual effort by over 50% with high availability and failover support.",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        "tags": ["ASP.NET", "Dashboards", "SQL Server", "Analytics"],
-        "links": {
-          "github": "https://github.com/mohamgamal"
-        },
-        "featured": false
-      },
-      {
+        "group": "supporting",
         "title": "Real-time CDC Pipeline (Kafka + Debezium)",
-        "description": "Built distributed CDC pipeline from PostgreSQL to MongoDB using Debezium and Kafka, processing 10K records/min with Python consumers. Implemented event-driven microservices handling 5K messages/sec.",
-        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-        "tags": ["Kafka", "Debezium", "Python", "Microservices"],
-        "links": {
-          "github": "https://github.com/mohamgamal"
+        "status": {
+          "kind": "proprietary",
+          "label": "Employment"
         },
+        "description": "Distributed change-data-capture pipeline from PostgreSQL to MongoDB via Debezium and Kafka, with Python consumers and event-driven microservices downstream.",
+        "tags": [
+          "Kafka",
+          "Debezium",
+          "PostgreSQL",
+          "Python",
+          "Microservices"
+        ],
+        "noRepoReason": "Employer-owned — no public repository.",
         "featured": true
+      },
+      {
+        "group": "supporting",
+        "title": "Judicial Systems Integration (Courts to G2G)",
+        "status": {
+          "kind": "proprietary",
+          "label": "Employment"
+        },
+        "description": "Service-oriented integration layer synchronising heterogeneous court systems in real time, with unified data formats and encrypted transport between government entities.",
+        "tags": [
+          ".NET",
+          "WCF",
+          "SQL Server",
+          "SOA",
+          "Integration"
+        ],
+        "noRepoReason": "Ministry of Justice system — not publishable.",
+        "featured": true
+      },
+      {
+        "group": "supporting",
+        "title": "Data Warehouse & ETL Platform",
+        "status": {
+          "kind": "proprietary",
+          "label": "Employment"
+        },
+        "description": "SSIS pipelines aggregating multiple source systems into a SQL Server data warehouse, feeding Power BI and OBIEE dashboards for nationwide judicial reporting.",
+        "tags": [
+          "SSIS",
+          "ETL",
+          "Data Warehouse",
+          "Power BI",
+          "SQL Server"
+        ],
+        "noRepoReason": "Employer-owned — no public repository.",
+        "featured": true
+      },
+      {
+        "group": "supporting",
+        "title": "Complaints Management System (MOJ)",
+        "status": {
+          "kind": "proprietary",
+          "label": "Employment"
+        },
+        "description": "Centralised ASP.NET Core application for complaint intake and handling, with automated workflows, notifications, role-based access and reporting.",
+        "tags": [
+          "ASP.NET Core",
+          "SQL Server",
+          "Workflow",
+          "RBAC"
+        ],
+        "noRepoReason": "Ministry of Justice system — not publishable.",
+        "featured": false
       }
     ]
   },
@@ -228,7 +387,12 @@
           "Optimized SQL Server performance for high-volume data processing",
           "Enhanced system architecture and web-service integration"
         ],
-        "technologies": [".NET Core", "WPF", "Web APIs", "SQL Server"]
+        "technologies": [
+          ".NET Core",
+          "WPF",
+          "Web APIs",
+          "SQL Server"
+        ]
       },
       {
         "company": "JIC (Judicial Information Center)",
@@ -240,9 +404,15 @@
           "Developed APIs and microservices for Ministry of Justice portal",
           "Implemented real-time case-tracking and reporting functionality",
           "Led Agile sprints and mentored junior engineers",
-          "Optimized SQL Server schemas improving performance by 300%"
+          "Redesigned SQL Server schemas and indexing strategy for the reporting workload"
         ],
-        "technologies": ["ASP.NET Core", "SSIS", "SQL Server", "Kafka", "ETL"]
+        "technologies": [
+          "ASP.NET Core",
+          "SSIS",
+          "SQL Server",
+          "Kafka",
+          "ETL"
+        ]
       },
       {
         "company": "JIC (Judicial Information Center)",
@@ -256,20 +426,25 @@
           "Provided post-implementation support and comprehensive documentation",
           "Improved database performance through optimization techniques"
         ],
-        "technologies": ["ASP.NET", "SQL Server", "WCF", "JavaScript"]
+        "technologies": [
+          "ASP.NET",
+          "SQL Server",
+          "WCF",
+          "JavaScript"
+        ]
       }
     ]
   },
   "contact": {
     "title": "Get In Touch",
     "description": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
-    "email": "Mohamed.gamal.sedeek@hotmail.com",
+    "email": "Mohamed.gamal.sedeek@gmail.com",
     "phone": "+201028822031",
     "location": "Badrashin, Giza, Egypt",
     "social": [
       {
         "name": "GitHub",
-        "url": "https://github.com/mohamgamal",
+        "url": "https://github.com/mgsm20101",
         "icon": "github"
       },
       {
@@ -280,11 +455,11 @@
       {
         "name": "Kaggle",
         "url": "https://www.kaggle.com/mohammg",
-        "icon": "twitter"
+        "icon": "kaggle"
       },
       {
         "name": "Email",
-        "url": "mailto:Mohamed.gamal.sedeek@hotmail.com",
+        "url": "mailto:Mohamed.gamal.sedeek@gmail.com",
         "icon": "email"
       }
     ],

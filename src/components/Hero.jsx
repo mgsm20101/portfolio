@@ -84,7 +84,7 @@ const Hero = ({ data }) => {
               {data.cta.secondary}
             </a>
             <a
-              href="/portfolio/Mohamed Gamal Sedeek.pdf"
+              href={`${import.meta.env.BASE_URL}${data.resume}`}
               download
               className="px-8 py-4 bg-accent rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 text-center flex items-center justify-center gap-2"
             >
@@ -121,7 +121,7 @@ const Hero = ({ data }) => {
           <div className="relative w-full max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent rounded-full blur-2xl opacity-30 animate-pulse"></div>
             <img
-              src={data.image}
+              src={`${import.meta.env.BASE_URL}${data.image}`}
               alt={data.name}
               className="relative rounded-full w-full h-auto border-4 border-surface shadow-2xl"
             />
@@ -147,6 +147,7 @@ const getSocialIcon = (icon) => {
   const icons = {
     github: '💻',
     linkedin: '💼',
+    kaggle: '📊',
     twitter: '🐦',
     email: '📧',
   };

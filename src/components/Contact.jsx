@@ -203,6 +203,7 @@ const getSocialIcon = (icon) => {
   const icons = {
     github: '💻',
     linkedin: '💼',
+    kaggle: '📊',
     twitter: '🐦',
     email: '📧',
   };
