@@ -244,14 +244,14 @@
         ],
         "links": {
           "github": "https://github.com/mgsm20101/arabic-legal-rag",
-          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/main/EVIDENCE.md"
+          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/portfolio-v1/EVIDENCE.md"
         },
         "evidence": {
           "command": "python evals/ablation_result.py  |  python evals/retrieval_latency.py --reps 3 --warmup 3  |  python tasks.py answer-eval --model ollama:gemma3:4b",
           "commit": "bd04e8e8 (quality) · d5cee7ff (latency) · 46797bef (generation)",
           "environment": "Retrieval on CPU, 12 cores / 15.9 GB. Generation on gemma3:4b via Ollama, Q4_K_M, greedy, temperature 0.",
           "dataset": "56 articles (Egypt Law 151/2020). 20 questions — 15 scored, 5 abstention, dev split, k=5.",
-          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/main/evals/registry",
+          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/portfolio-v1/evals/registry",
           "note": "Each harness refuses to describe a dirty worktree: it runs git status itself and stamps worktree_clean into its own output, so a result produced from an edited tree says so."
         },
         "featured": true
