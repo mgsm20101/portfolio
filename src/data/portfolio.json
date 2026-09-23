@@ -49,7 +49,7 @@
     "paragraphs": [
       "Ten years of production .NET across judicial and government systems — APIs, microservices, SSIS/ETL pipelines, SQL Server and PostgreSQL at scale, Kafka and Debezium for change data capture, Docker and Kubernetes to ship it. That is the half of AI engineering that is just engineering, and it is the half most demos skip.",
       "The AI work is built the same way. My flagship is an Arabic legal RAG system where the question set, the reference checker and the scoreboard were written before the retriever existed. Four retrieval configurations are compared under bootstrap confidence intervals; generation is scored by a program that audits every citation against the articles the retriever actually returned, with no judge model in the loop.",
-      "It reports a negative result on purpose: adding a cross-encoder reranker cost 64x the latency and did not beat dense retrieval on this eval set. Knowing that — and knowing the eval set is too small to resolve the difference — is worth more than a demo that answers one question well."
+      "It also retracted its own headline. At 15 questions dense retrieval looked best; I tripled the eval set to 60 (20 held out), re-ran it, and at 30 scored questions no ordering of the four configurations survives its confidence interval. The apparent reversal was the question mix changing, not the retrievers — re-weighting by the old mix brings dense back to the top. The README now says so, under a heading that says so."
     ],
     "stats": [
       {
@@ -62,7 +62,7 @@
       },
       {
         "label": "Tests in the flagship repo",
-        "value": "890"
+        "value": "911"
       },
       {
         "label": "Published numbers without a source",
@@ -220,19 +220,19 @@
         "description": "Article-level corpus, a hand-written question set with machine-verified article references, and four retrieval configurations compared under bootstrap confidence intervals. Generation is citation-forced and audited by a program rather than a judge model: every citation is resolved against the corpus and against the exact articles the retriever returned.",
         "metrics": [
           {
-            "label": "Recall@5 — dense, against BM25's 0.333",
-            "value": "0.767"
+            "label": "Reranker latency cost (7,710 vs 125 ms median), for no gain the eval can resolve",
+            "value": "61x"
           },
           {
-            "label": "Reranker latency cost, for no measurable gain",
-            "value": "64x"
-          },
-          {
-            "label": "Fabricated citations across 15 answers",
+            "label": "Fabricated citations across 29 generated answers",
             "value": "0"
+          },
+          {
+            "label": "Eval questions, 20 held out — enough to overturn the repo's own headline",
+            "value": "60"
           }
         ],
-        "limitation": "15 scored questions. Only dense > BM25 survives the confidence intervals — dense, hybrid and hybrid+rerank overlap, so this eval set cannot order them. The corpus also failed its fidelity check against the official gazette, so every number is performance on this corpus, not a statement about the law.",
+        "limitation": "30 scored questions, and every Recall@5 interval overlaps every other (0.467–0.767 across the four configurations), so this eval set cannot order them. Generation grounds 11 of 29 answers fully, and 0 of 9 multi-article answers — the defect the audit located, not yet fixed. The corpus also failed its fidelity check against the official gazette, so every number is performance on this corpus, not a statement about the law.",
         "tags": [
           "RAG",
           "Arabic NLP",
@@ -244,14 +244,14 @@
         ],
         "links": {
           "github": "https://github.com/mgsm20101/arabic-legal-rag",
-          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/portfolio-v1/EVIDENCE.md"
+          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/portfolio-v2/EVIDENCE.md"
         },
         "evidence": {
           "command": "python evals/ablation_result.py  |  python evals/retrieval_latency.py --reps 3 --warmup 3  |  python tasks.py answer-eval --model ollama:gemma3:4b",
-          "commit": "bd04e8e8 (quality) · d5cee7ff (latency) · 46797bef (generation)",
-          "environment": "Retrieval on CPU, 12 cores / 15.9 GB. Generation on gemma3:4b via Ollama, Q4_K_M, greedy, temperature 0.",
-          "dataset": "56 articles (Egypt Law 151/2020). 20 questions — 15 scored, 5 abstention, dev split, k=5.",
-          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/portfolio-v1/evals/registry",
+          "commit": "618693ef (quality) · 318ba702 (latency) · 83384b2b (generation) — tag portfolio-v2",
+          "environment": "Retrieval on CPU (i7-8750H, 6 cores / 12 threads, 15.9 GB). Generation on gemma3:4b via Ollama, Q4_K_M, greedy, temperature 0, 128-token cap.",
+          "dataset": "56 articles (Egypt Law 151/2020). 60 questions — 40 dev (30 scored, 10 abstention) and 20 held-out test the harness cannot load unless named. k=5; latency n=90.",
+          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/portfolio-v2/evals/registry",
           "note": "Each harness refuses to describe a dirty worktree: it runs git status itself and stamps worktree_clean into its own output, so a result produced from an edited tree says so."
         },
         "featured": true
