@@ -62,7 +62,7 @@
       },
       {
         "label": "Tests in the flagship repo",
-        "value": "938"
+        "value": "956"
       },
       {
         "label": "Published numbers without a source",
@@ -224,7 +224,7 @@
             "value": "~55x"
           },
           {
-            "label": "Fabricated citations across 59 generated answers, in two runs",
+            "label": "Fabricated citations, in all 15 generation runs",
             "value": "0"
           },
           {
@@ -232,7 +232,7 @@
             "value": "60"
           }
         ],
-        "limitation": "30 scored questions, and every Recall@5 interval overlaps every other (0.467–0.767 across the four configurations), so this eval set cannot order them. Generation grounds only 12 of 30 answers fully — the model omits citations rather than inventing them — and it does not reproduce across an Ollama restart: same model, greedy decoding, different text on 26 of 40 questions, and the pre-registered abstention check passed in one run and failed in the other. The corpus also failed its fidelity check against the official gazette, so every number is performance on this corpus, not a statement about the law.",
+        "limitation": "30 scored questions, and every Recall@5 interval overlaps every other (0.467–0.767 across the four configurations), so this eval set cannot order them. Generation grounds only 12 of 30 answers fully — the model omits citations rather than inventing them — and the output depends on where the model runs. Deterministic across ten server restarts at 34 of 35 GPU layers; pinned to 2 layers it reproduced an older run on 37 of 40 answers — and the pre-registered abstention check passes at 2 layers and fails at 34. The corpus also failed its fidelity check against the official gazette, so every number is performance on this corpus, not a statement about the law.",
         "tags": [
           "RAG",
           "Arabic NLP",
@@ -244,14 +244,14 @@
         ],
         "links": {
           "github": "https://github.com/mgsm20101/arabic-legal-rag",
-          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/portfolio-v3/EVIDENCE.md"
+          "writeup": "https://github.com/mgsm20101/arabic-legal-rag/blob/portfolio-v5/EVIDENCE.md"
         },
         "evidence": {
-          "command": "python evals/ablation_result.py  |  python evals/retrieval_latency.py --reps 3 --warmup 3  |  python tasks.py answer-eval --model ollama:gemma3:4b  |  python evals/generation_repeat.py",
-          "commit": "4fe53a93 (quality, latency, generation) · 5250b8b0 (repeat check) — tag portfolio-v3",
+          "command": "python evals/ablation_result.py  |  python evals/retrieval_latency.py --reps 3 --warmup 3  |  python tasks.py answer-eval --model ollama:gemma3:4b  |  python evals/generation_variance.py",
+          "commit": "4fe53a93 (quality, latency, generation) · d5379c39 + 7455aba8 (placement runs, pre-registered) — tag portfolio-v5",
           "environment": "Python 3.14.6, torch 2.14.0+cpu — checked by each harness, not asserted. Retrieval on CPU (i7-8750H, 6 cores / 12 threads, 15.9 GB). Generation on gemma3:4b via Ollama, Q4_K_M, greedy, temperature 0, 128-token cap.",
           "dataset": "56 articles (Egypt Law 151/2020). 60 questions — 40 dev (30 scored, 10 abstention) and 20 held-out test the harness cannot load unless named. k=5; latency n=90.",
-          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/portfolio-v3/evals/registry",
+          "raw": "https://github.com/mgsm20101/arabic-legal-rag/tree/portfolio-v5/evals/registry",
           "note": "Each harness refuses to describe a dirty worktree: it runs git status itself and stamps worktree_clean into its own output, so a result produced from an edited tree says so."
         },
         "featured": true
