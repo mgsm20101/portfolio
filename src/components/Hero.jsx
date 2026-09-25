@@ -91,6 +91,17 @@ const Hero = ({ data }) => {
               <span>📄</span>
               Download CV
             </a>
+            {data.projectsGuide && (
+              <a
+                href={`${import.meta.env.BASE_URL}${data.projectsGuide}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 border-2 border-accent rounded-lg font-semibold hover:bg-accent/10 transition-all duration-300 text-center flex items-center justify-center gap-2"
+              >
+                <span>📘</span>
+                Projects Explained
+              </a>
+            )}
           </motion.div>
 
           {/* Social Links */}
