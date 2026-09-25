@@ -301,6 +301,229 @@
         "featured": true
       },
       {
+        "group": "measured",
+        "title": "Tool Agent over MCP — a guarded loop, measured on a 3B model",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "An agent that can call tools can also call the wrong ones, loop, or answer confidently past what it retrieved. The question is where a small local model breaks, measured task by task rather than assumed.",
+        "description": "An agent loop over an MCP server (calculator, knowledge search, clock) with an allowlist, argument-schema checks, repeat-call detection and an iteration cap — plus a narrow recovery path for a model that emits tool calls as text instead of structured calls.",
+        "metrics": [
+          {
+            "label": "Tasks completed (4/8); every single-step task passed",
+            "value": "50%"
+          },
+          {
+            "label": "Runs stopped by the iteration guardrail — both multi-step tasks among them",
+            "value": "3"
+          },
+          {
+            "label": "Confident wrong answer after a correct retrieval",
+            "value": "1"
+          }
+        ],
+        "limitation": "Eight tasks: one is 12.5 points, so the pattern (single-step works, multi-step breaks) is the finding, not the rate. One model, qwen2.5-coder:3b; gemma3:4b is rejected by Ollama for tool calls outright.",
+        "tags": [
+          "MCP",
+          "Agents",
+          "Tool calling",
+          "Guardrails",
+          "Ollama",
+          "pytest"
+        ],
+        "links": {
+          "github": "https://github.com/mgsm20101/tool-agent-mcp"
+        },
+        "evidence": {
+          "command": "python -m src.eval.run_eval",
+          "commit": "500d1988 (worktree clean)",
+          "environment": "qwen2.5-coder:3b via Ollama, temperature 0. Windows 11, 15.9 GB RAM, GTX 1050 Ti 4 GB (Ollama offloads part of the model).",
+          "dataset": "8 tasks (AR/EN): arithmetic, policy lookup, date, and two multi-step.",
+          "raw": "https://github.com/mgsm20101/tool-agent-mcp/blob/main/results/eval_500d1988.json",
+          "note": "The harness refuses a dirty tree and stamps the commit into the result file; CI runs 89 model-free tests."
+        },
+        "featured": false
+      },
+      {
+        "group": "measured",
+        "title": "LLM Serving Cost — measured throughput against a break-even",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "When does serving a model yourself beat paying per token? The usual answer compares prices and forgets to ask whether the hardware can even produce the break-even volume.",
+        "description": "A streaming benchmark (time to first token, tokens/s, p95) over short, medium and long Arabic prompts, and a cost model that reports both the break-even volume and the monthly capacity the measured throughput can reach.",
+        "metrics": [
+          {
+            "label": "Local token cost vs illustrative hosted price, at measured throughput",
+            "value": "4.7x"
+          },
+          {
+            "label": "Median time to first token once loaded, every prompt class",
+            "value": "< 1.2 s"
+          },
+          {
+            "label": "Break-even ~119M tokens/month vs ~25M capacity — not reachable here",
+            "value": "no"
+          }
+        ],
+        "limitation": "Two small models on one laptop, single requests, no concurrency. Server cost and API prices are inputs, not measurements. Found and fixed a units bug that had put the break-even 1000x too low.",
+        "tags": [
+          "Benchmarking",
+          "Cost modelling",
+          "Streaming",
+          "Ollama",
+          "pytest"
+        ],
+        "links": {
+          "github": "https://github.com/mgsm20101/llm-serving-cost"
+        },
+        "evidence": {
+          "command": "python run_bench.py",
+          "commit": "f6042d92 (worktree clean)",
+          "environment": "Windows 11, 15.9 GB RAM, GTX 1050 Ti 4 GB (Ollama offloads part of the model).",
+          "dataset": "24 streamed requests: 2 models x 6 prompts x 2 repetitions, no warm-up; medians reported.",
+          "raw": "https://github.com/mgsm20101/llm-serving-cost/blob/main/results/bench_f6042d92.json",
+          "note": "Prices are per 1M tokens in every parameter name, pinned by a test."
+        },
+        "featured": false
+      },
+      {
+        "group": "measured",
+        "title": ".NET AI Assistant — an LLM feature inside Clean Architecture",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "LLM demos live in notebooks. What does the same feature look like inside an ordinary ASP.NET Core backend — and how is it tested without the model in CI and with it for real?",
+        "description": "ASP.NET Core 8 + MediatR: classify intent, retrieve when factual, answer through Ollama. The model and the knowledge store are ports; unit and in-process API tests replace the model, and an eval runs the real pipeline against the real model.",
+        "metrics": [
+          {
+            "label": "Eval checks passed with the real model (5 cases x intent + content)",
+            "value": "10/10"
+          },
+          {
+            "label": "Model-free unit and in-process API tests in CI",
+            "value": "37"
+          },
+          {
+            "label": "Wall clock for the model eval, including load",
+            "value": "53 s"
+          }
+        ],
+        "limitation": "Five cases is a smoke test of the vertical slice, not a quality measurement; content checks are substring assertions after stripping Arabic diacritics, and nothing else is folded.",
+        "tags": [
+          ".NET 8",
+          "ASP.NET Core",
+          "Clean Architecture",
+          "CQRS",
+          "xUnit",
+          "Ollama"
+        ],
+        "links": {
+          "github": "https://github.com/mgsm20101/dotnet-ai-assistant"
+        },
+        "evidence": {
+          "command": "python scripts/run_eval.py",
+          "commit": "df41e7d7 (worktree clean)",
+          "environment": "gemma3:4b via Ollama, .NET SDK 10.0.302. Windows 11, 15.9 GB RAM, GTX 1050 Ti 4 GB (Ollama offloads part of the model).",
+          "dataset": "5 gold HR-policy questions (3 factual, 2 calculation).",
+          "raw": "https://github.com/mgsm20101/dotnet-ai-assistant/blob/main/results/eval_df41e7d7.json",
+          "note": "The runner parses the test host's TRX output and records the commit; it refuses a dirty tree."
+        },
+        "featured": false
+      },
+      {
+        "group": "measured",
+        "title": "LLM Observability — tracing a RAG pipeline span by span",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "\"The model is slow\" is not a diagnosis. Where does a request actually spend its time, what does the first request cost, and can a build fail when quality drops?",
+        "description": "A traced RAG pipeline (retrieve, rerank, generate) writing spans to a local sink, per-stage latency and token accounting, and a CI gate on thresholds fixed before the run.",
+        "metrics": [
+          {
+            "label": "Share of warm pipeline time spent generating",
+            "value": "84%"
+          },
+          {
+            "label": "First request vs warm median — the embedding model loading, not the LLM",
+            "value": "42x"
+          },
+          {
+            "label": "Quality gates passed (retrieval, grounding, abstention)",
+            "value": "PASS"
+          }
+        ],
+        "limitation": "Twelve questions on a synthetic HR corpus: the gate proves the mechanism fails a build on regression; the rates are too small a sample to rank anything. Latency is one process on a shared desktop.",
+        "tags": [
+          "Observability",
+          "Tracing",
+          "RAG",
+          "CI gates",
+          "Ollama",
+          "pytest"
+        ],
+        "links": {
+          "github": "https://github.com/mgsm20101/llm-observability"
+        },
+        "evidence": {
+          "command": "python run_traced.py",
+          "commit": "b382cd4e (worktree clean)",
+          "environment": "gemma3:4b via Ollama; multilingual-e5-base encoder; mMARCO cross-encoder. Windows 11, 15.9 GB RAM, GTX 1050 Ti 4 GB (Ollama offloads part of the model).",
+          "dataset": "12 questions, 48 spans; every span is in the tracked traces file.",
+          "raw": "https://github.com/mgsm20101/llm-observability/blob/main/results/summary_b382cd4e.json",
+          "note": "The gate and the dashboard share one median() — they once disagreed on the same traces."
+        },
+        "featured": false
+      },
+      {
+        "group": "measured",
+        "title": "LoRA vs full fine-tuning — a multilingual encoder on CPU",
+        "status": {
+          "kind": "measured",
+          "label": "Measured"
+        },
+        "problem": "How much of full fine-tuning does LoRA recover when it trains under 1% of the parameters — measured on the same data, seed and epochs, not taken from a paper?",
+        "description": "Three configurations of distilbert-base-multilingual-cased on the intent-router data — classifier head only, LoRA (r=8 on attention), and full fine-tuning — trained on CPU with a fixed seed.",
+        "metrics": [
+          {
+            "label": "LoRA accuracy (23/32) vs 0.750 full and 0.562 head only",
+            "value": "0.719"
+          },
+          {
+            "label": "Parameters trained by LoRA",
+            "value": "0.55%"
+          },
+          {
+            "label": "Saved adapter vs 541 MB full model",
+            "value": "3 MB"
+          }
+        ],
+        "limitation": "32 eval rows: the Wilson intervals overlap, so the ordering is a direction and LoRA vs full is one question apart. The 4-bit half of QLoRA is not demonstrated — bitsandbytes needs CUDA and this torch build is CPU-only.",
+        "tags": [
+          "LoRA",
+          "PEFT",
+          "Fine-tuning",
+          "transformers",
+          "pytest"
+        ],
+        "links": {
+          "github": "https://github.com/mgsm20101/lora-intent-classifier"
+        },
+        "evidence": {
+          "command": "python -m src.train_cpu",
+          "commit": "d962ba5d (worktree clean)",
+          "environment": "CPU training, torch 2.14.0+cpu, transformers 5.16.1, peft 0.21.0.",
+          "dataset": "96 train / 32 eval, 8 balanced intents, seed 20260923.",
+          "raw": "https://github.com/mgsm20101/lora-intent-classifier/blob/main/results/runs_d962ba5d.json",
+          "note": "Deterministic on CPU with a fixed seed: the same numbers came out before and after the repository existed."
+        },
+        "featured": false
+      },
+      {
         "group": "supporting",
         "title": "Real-time CDC Pipeline (Kafka + Debezium)",
         "status": {

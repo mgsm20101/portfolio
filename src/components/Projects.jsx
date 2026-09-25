@@ -10,6 +10,11 @@ const GROUPS = [
     blurb: 'Measured end to end. Every number below has a command and a commit behind it.',
   },
   {
+    id: 'measured',
+    label: 'More measured projects',
+    blurb: 'Smaller builds, each public with a CI test suite and a result file taken at a clean commit.',
+  },
+  {
     id: 'supporting',
     label: 'Supporting work',
     blurb: 'Production systems delivered in employment. Proprietary — no public repository.',
