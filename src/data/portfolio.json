@@ -63,7 +63,7 @@
       },
       {
         "label": "Tests in the flagship repo",
-        "value": "956"
+        "value": "959"
       },
       {
         "label": "Published numbers without a source",
@@ -312,11 +312,11 @@
         "description": "An agent loop over an MCP server (calculator, knowledge search, clock) with an allowlist, argument-schema checks, repeat-call detection and an iteration cap — plus a narrow recovery path for a model that emits tool calls as text instead of structured calls.",
         "metrics": [
           {
-            "label": "Tasks completed (4/8); every single-step task passed",
+            "label": "Tasks completed (4/8): single-step 4 of 6, multi-step 0 of 2",
             "value": "50%"
           },
           {
-            "label": "Runs stopped by the iteration guardrail — both multi-step tasks among them",
+            "label": "Runs stopped by the iteration guardrail — both multi-step tasks and one plain lookup",
             "value": "3"
           },
           {
@@ -324,7 +324,7 @@
             "value": "1"
           }
         ],
-        "limitation": "Eight tasks: one is 12.5 points, so the pattern (single-step works, multi-step breaks) is the finding, not the rate. One model, qwen2.5-coder:3b; gemma3:4b is rejected by Ollama for tool calls outright.",
+        "limitation": "Eight tasks: one is 12.5 points, so the pattern (multi-step 0 of 2, single-step 4 of 6) is the finding, not the rate. One model, qwen2.5-coder:3b; gemma3:4b is rejected by Ollama for tool calls outright.",
         "tags": [
           "MCP",
           "Agents",
@@ -398,7 +398,7 @@
           "label": "Measured"
         },
         "problem": "LLM demos live in notebooks. What does the same feature look like inside an ordinary ASP.NET Core backend — and how is it tested without the model in CI and with it for real?",
-        "description": "ASP.NET Core 8 + MediatR: classify intent, retrieve when factual, answer through Ollama. The model and the knowledge store are ports; unit and in-process API tests replace the model, and an eval runs the real pipeline against the real model.",
+        "description": "ASP.NET Core 8, handler injected directly: classify intent, retrieve when factual, answer through Ollama. The model and the knowledge store are ports; unit and in-process API tests replace the model, and an eval runs the real pipeline against the real model.",
         "metrics": [
           {
             "label": "Eval checks passed with the real model (5 cases x intent + content)",
@@ -406,7 +406,7 @@
           },
           {
             "label": "Model-free unit and in-process API tests in CI",
-            "value": "37"
+            "value": "31"
           },
           {
             "label": "Wall clock for the model eval, including load",
@@ -418,7 +418,6 @@
           ".NET 8",
           "ASP.NET Core",
           "Clean Architecture",
-          "CQRS",
           "xUnit",
           "Ollama"
         ],
